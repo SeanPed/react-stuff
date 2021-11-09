@@ -4,15 +4,16 @@ import styled from 'styled-components';
 
 type ButtonProps = {
   children: ReactNode;
+  large?: boolean;
 };
-function Button({ children }: ButtonProps): JSX.Element {
-  return <StyledButton>{children}</StyledButton>;
+function Button({ children, large }: ButtonProps): JSX.Element {
+  return <StyledButton large={large}>{children}</StyledButton>;
 }
 
-const StyledButton = styled.button`
+const StyledButton = styled.button<Partial<ButtonProps>>`
   color: #000;
   background: linear-gradient(180deg, #ffbb3b, #ffa90a);
-  font-size: 0.8em;
+  font-size: ${(props) => (props.large ? '1.2em' : '0.8em')};
   padding: 0.8em 2em;
   border: none;
   border-radius: 0.4em;
