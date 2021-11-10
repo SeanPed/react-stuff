@@ -6,7 +6,7 @@ import TagList from '../TagList/TagList';
 type CardProps = {
   title: string;
   description: string;
-  tags: [];
+  tags: string[];
 };
 
 function Card({ title, description, tags }: CardProps): JSX.Element {
