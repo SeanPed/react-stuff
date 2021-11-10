@@ -30,6 +30,7 @@ const StyledCard = styled.div`
   border: 2px solid #272343;
   display: inline-block;
   padding: 5px 8px;
+  max-width: 250px;
 `;
 
 export default Card;

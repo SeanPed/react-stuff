@@ -15,6 +15,7 @@ const StyledTagList = styled.ul`
   gap: 5px;
   margin-left: 0;
   padding: 0;
+  flex-wrap: wrap;
 `;
 
 export default TagList;
