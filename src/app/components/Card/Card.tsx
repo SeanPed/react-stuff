@@ -16,7 +16,7 @@ function Card({ title, description, tags }: CardProps): JSX.Element {
       <p>{description}</p>
       <TagList>
         {tags.map((tag) => (
-          <Tag value={tag} />
+          <Tag>{tag}</Tag>
         ))}
       </TagList>
     </StyledCard>

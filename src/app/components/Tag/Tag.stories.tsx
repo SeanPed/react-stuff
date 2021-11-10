@@ -6,5 +6,5 @@ export default {
   component: Tag,
 };
 
-export const Washing = (): JSX.Element => <Tag value={'Washing'} />;
+export const Washing = (): JSX.Element => <Tag>Washing</Tag>;
 //export const Register = (): JSX.Element => <Button>Register</Button>;

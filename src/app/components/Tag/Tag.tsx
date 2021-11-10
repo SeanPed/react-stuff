@@ -1,12 +1,13 @@
 import React from 'react';
+import type { ReactNode } from 'react';
 import styled from 'styled-components';
 
 type TagProps = {
-  value: string;
+  children: ReactNode;
 };
 
-function Tag({ value }: TagProps): JSX.Element {
-  return <StyledTag>{value}</StyledTag>;
+function Tag({ children }: TagProps): JSX.Element {
+  return <StyledTag>{children}</StyledTag>;
 }
 
 const StyledTag = styled.li`
