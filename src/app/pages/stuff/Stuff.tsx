@@ -1,21 +1,34 @@
-import React from 'react';
-import { Link, useParams } from 'react-router-dom';
-import Button from '../../components/Button/Button';
+import React, { useEffect, useState } from 'react';
+import { useParams } from 'react-router-dom';
+import DetailCard from '../../components/CardDetails/DetailCard';
+import type { Thing } from '../../types';
 
 function Stuff(): JSX.Element {
-  const { stuffParams } = useParams();
+  const [thing, setThing] = useState<null | Thing>(null);
+  const { thingID } = useParams();
+
+  useEffect(() => {
+    //standart function from React - calls a new function - as seen below
+    async function fetchOne() {
+      //function must be async since we use await in code
+      const response = await fetch(
+        `https://json-server.neuefische.de/stuff/${thingID}`
+      ); // link to API
+      const fetchedOne = await response.json(); //api written in json - convert to JS
+      setThing(fetchedOne);
+    }
+    fetchOne();
+  });
+
   return (
     <>
-      <h2>Stuff</h2>
-      <p>
-        You have a {stuffParams} on your list. Back to{' '}
-        <Button>
-          <Link to="/stuff">Stuff</Link>
-        </Button>
-        <Link to="/stuff">
-          <Button large={true}>Stuff</Button>
-        </Link>
-      </p>
+      {thing && (
+        <DetailCard
+          name={thing.name}
+          description={thing.description}
+          categories={thing.categories}
+        />
+      )}
     </>
   );
 }

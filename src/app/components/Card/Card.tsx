@@ -1,24 +1,19 @@
 import React from 'react';
 import styled from 'styled-components';
-import Tag from '../Tag/Tag';
+import StyledTag from '../Tag/Tag';
 import TagList from '../TagList/TagList';
 
 type CardProps = {
-  title: string;
+  name: string;
   description: string;
-  tags: string[];
+  categorys?: string[];
 };
 
-function Card({ title, description, tags }: CardProps): JSX.Element {
+function Card({ name, description, categorys }: CardProps): JSX.Element {
   return (
     <StyledCard>
-      <h2>{title}</h2>
+      <h2>{name}</h2>
       <p>{description}</p>
-      <TagList>
-        {tags.map((tag) => (
-          <Tag>{tag}</Tag>
-        ))}
-      </TagList>
     </StyledCard>
   );
 }

@@ -1,14 +1,4 @@
-import React from 'react';
-import type { ReactNode } from 'react';
 import styled from 'styled-components';
-
-type TagProps = {
-  children: ReactNode;
-};
-
-function Tag({ children }: TagProps): JSX.Element {
-  return <StyledTag>{children}</StyledTag>;
-}
 
 const StyledTag = styled.li`
   list-style: none;
@@ -21,4 +11,4 @@ const StyledTag = styled.li`
   font-weight: bolder;
 `;
 
-export default Tag;
+export default StyledTag;
