@@ -18,7 +18,7 @@ function Stuff(): JSX.Element {
       setThing(fetchedOne);
     }
     fetchOne();
-  });
+  }, []);
 
   return (
     <>
