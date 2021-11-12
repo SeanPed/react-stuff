@@ -2,6 +2,7 @@ import React from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Dashboard from './pages/Dashboard/Dashboard';
 import Stuff from './pages/stuff/Stuff';
+import AddForm from './components/AddForm/AddForm';
 
 function App(): JSX.Element {
   return (
@@ -11,7 +12,7 @@ function App(): JSX.Element {
         <Route path="/" element={<Dashboard />} />
         {/* <Route path="/about" element={<p>About</p>} />
         <Route path="/motivation" element={<p>Motivation</p>} /> */}
-        <Route path="/add" element={<h1>Add Form!</h1>} />
+        <Route path="/add" element={<AddForm />} />
         <Route path="/stuff" element={<Stuff />}>
           <Route path=":thingID" element={<Stuff />}></Route>
         </Route>
