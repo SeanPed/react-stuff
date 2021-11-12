@@ -19,7 +19,7 @@ export default function DetailCard({
       <p>{description}</p>
       <ul>
         {categories?.map((category) => (
-          <li>{category}</li>
+          <li key={category}>{category}</li>
         ))}
       </ul>
     </article>
