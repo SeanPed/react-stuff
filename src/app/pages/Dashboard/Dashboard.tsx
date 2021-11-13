@@ -1,11 +1,19 @@
 import React from 'react';
 import Card from '../../components/Card/Card';
 import type { Thing } from '../../types';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import useFetch from '../../hooks/useFetch';
 
 export default function Dashboard(): JSX.Element {
   const things = useFetch<Thing[]>('https://json-server.neuefische.de/stuff');
+  const navigate = useNavigate();
+
+  async function handleDelete(id: number) {
+    await fetch(`https://json-server.neuefische.de/stuff/${id}`, {
+      method: 'DELETE',
+    });
+    navigate('/');
+  }
 
   return (
     <main>
@@ -17,6 +25,7 @@ export default function Dashboard(): JSX.Element {
               name={thing.name}
               description={thing.description}
               categorys={thing.categories}
+              onDelete={() => handleDelete(thing.id)}
             />
           </Link>
         ))}

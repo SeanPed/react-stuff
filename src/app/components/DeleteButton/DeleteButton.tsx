@@ -1,11 +1,15 @@
 import React from 'react';
 import styled from 'styled-components';
-styled;
 
-export default function DeleteButton(): JSX.Element {
+type DeleteButtonProps = {
+  deleteCard: () => void;
+};
+export default function DeleteButton({
+  deleteCard,
+}: DeleteButtonProps): JSX.Element {
   return (
     <>
-      <Button>x</Button>
+      <Button onClick={deleteCard}>x</Button>
     </>
   );
 }

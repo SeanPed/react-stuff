@@ -6,6 +6,4 @@ export default {
   component: DeleteButton,
 };
 
-export const Delete = (): JSX.Element => (
-  <DeleteButton>Wech mit die Viecher</DeleteButton>
-);
+export const Delete = (): JSX.Element => <DeleteButton />;
